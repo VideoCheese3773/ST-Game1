@@ -193,6 +193,7 @@ function App() {
       {intro
         ? (<div className='game' style={{ backgroundColor }}>
           <h1>Instrucciones</h1>
+          <h3>Insert instructions here</h3>
         </div>)
         : (<div className='game' style={{ backgroundColor }}>
           <h1>{title}</h1>
