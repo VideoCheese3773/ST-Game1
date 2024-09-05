@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
-
-const Counter = () => {
-    const [count, setCount] = useState(0);
-    const [label, setLabel] = useState('Player');
+export function Counter (props) {
+    // eslint-disable-next-line react/prop-types
+    const {count, setCount, label, setLabel} = props
+    
 
     const increment = () => {
         setCount(count + 1);
     };
 
     const decrement = () => {
-        setCount(count - 1);
+        count<=0
+        ? setCount(0)
+        : setCount(count - 1)
     };
 
     const handleLabelChange = (e) => {
@@ -31,5 +32,3 @@ const Counter = () => {
         </div>
     );
 };
-
-export default Counter;

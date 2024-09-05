@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-import Counter from './counter.jsx';
+import {Counter} from './counter.jsx';
 import './App.css'
+import { Toggle } from './Toggle.jsx';
 
 const good = [
   {
@@ -141,6 +142,16 @@ function App() {
   const [title, setTitle] = useState()
   const [text, setText] = useState()
   const [backgroundColor, setBackgroundColor] = useState('');
+  const [intro, setIntro] = useState(true)
+  const [count1, setCount1] = useState(0);
+  const [label1, setLabel1] = useState('Jugador 1')
+  const [count2, setCount2] = useState(0);
+  const [label2, setLabel2] = useState('Jugador 2')
+  const [count3, setCount3] = useState(0);
+  const [label3, setLabel3] = useState('Jugador 3')
+  const [count4, setCount4] = useState(0);
+  const [label4, setLabel4] = useState('Jugador 4')
+  
 
   useEffect(() => {
     setTitle('Listo para jugar!')
@@ -168,26 +179,38 @@ function App() {
     setBackgroundColor('purple')
   };
 
-
+  const handleIntroDisplay = () => {
+    setIntro(intro => !intro)
+  }
 
   return (
     <>
-    <div className='game'  style={{ backgroundColor }}>
-        <h1>{title}</h1>
-        <h3 className='textDisplay'>{text}</h3>
-        <div className='buttonContainer'>
-          <button className='textButton' onClick={handleGoodButtonClick}><h3>Verde</h3></button>
-          <button className='textButton' onClick={handleBadButtonClick}><h3>Rojo</h3></button>
-          <button className='textButton' onClick={handleChallengeButtonClick}><h3>Morado</h3></button>
-        </div>
-        <div className='counters'>
-      <Counter />
-      <Counter />
-      <Counter />
-      <Counter />
-    </div>
-    </div>
-    
+      {
+        intro
+        ?<Toggle clickAction={handleIntroDisplay} textContent={'A Jugar!'}></Toggle>
+        :<Toggle clickAction={handleIntroDisplay} textContent={'Volver a instrucciones'}></Toggle>
+      }
+      {intro
+        ? (<div className='game' style={{ backgroundColor }}>
+          <h1>Yappin&apos; about it</h1>
+        </div>)
+        : (<div className='game' style={{ backgroundColor }}>
+          <h1>{title}</h1>
+          <h3 className='textDisplay'>{text}</h3>
+          <div className='buttonContainer'>
+            <button className='textButton' onClick={handleGoodButtonClick}><h3>Verde</h3></button>
+            <button className='textButton' onClick={handleBadButtonClick}><h3>Rojo</h3></button>
+            <button className='textButton' onClick={handleChallengeButtonClick}><h3>Morado</h3></button>
+          </div>
+          <div className='counters'>
+            <Counter count={count1} setCount={setCount1} label={label1} setLabel={setLabel1}/>
+            <Counter count={count2} setCount={setCount2} label={label2} setLabel={setLabel2}/>
+            <Counter count={count3} setCount={setCount3} label={label3} setLabel={setLabel3}/>
+            <Counter count={count4} setCount={setCount4} label={label4} setLabel={setLabel4}/>
+          </div>
+        </div>)
+      }
+
     </>
   )
 }
