@@ -26,7 +26,7 @@ export function Counter (props) {
                 placeholder="Enter label"
                 style={{ marginBottom: '20px', fontSize: '16px', padding: '5px' }}
             />
-            <h1>{label}: {count}</h1>
+            <h3>{label}: {count}</h3>
             <button onClick={increment} style={{ marginRight: '10px' }}>+1</button>
             <button onClick={decrement}>-1</button>
         </div>
