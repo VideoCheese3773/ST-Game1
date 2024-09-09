@@ -199,11 +199,11 @@ function App() {
         :<Toggle clickAction={handleIntroDisplay} textContent={'Volver a instrucciones'}></Toggle>
       }
       {intro
-        ? (<div className='game' style={{ backgroundColor, backgroundImage: `url(${inn})`, backgroundSize: 'cover' }}>
+        ? (<div className='game' style={{ backgroundColor, backgroundImage: `url(${inn})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
           <h1>Instrucciones</h1>
           <h3>Insert instructions here</h3>
         </div>)
-        : (<div className='game' style={{ backgroundColor, backgroundImage: `url(${background})`, backgroundSize: 'cover'  }}>
+        : (<div className='game' style={{ backgroundColor, backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'center'  }}>
           <h1>{title}</h1>
           <h3 className='textDisplay'>{text}</h3>
           <div className='buttonContainer'>
