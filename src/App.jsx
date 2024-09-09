@@ -2,6 +2,10 @@ import { useEffect, useState } from 'react'
 import {Counter} from './counter.jsx';
 import './App.css'
 import { Toggle } from './Toggle.jsx';
+import inn from './imgs/inn.jpg'
+import forest from './imgs/forest.jpg'
+import hell from './imgs/hell.jpg'
+import nether from './imgs/nether.jpg'
 
 const good = [
   {
@@ -142,7 +146,7 @@ function App() {
   const [title, setTitle] = useState()
   const [text, setText] = useState()
   const [backgroundColor, setBackgroundColor] = useState('');
-  const [background, setBackground] = useState('/imgs/inn.jpg');
+  const [background, setBackground] = useState(inn);
   const [intro, setIntro] = useState(true)
   const [count1, setCount1] = useState(0);
   const [label1, setLabel1] = useState('Jugador 1')
@@ -164,7 +168,7 @@ function App() {
     setTitle(good[rand].titulo)
     setText(good[rand].descripcion)
     setBackgroundColor('green')
-    setBackground('/imgs/forest.jpg')
+    setBackground(forest)
   };
 
   const handleBadButtonClick = () => {
@@ -172,7 +176,7 @@ function App() {
     setTitle(bad[rand].titulo)
     setText(bad[rand].descripcion)
     setBackgroundColor('red')
-    setBackground('/imgs/hell.jpg')
+    setBackground(hell)
   };
 
   const handleChallengeButtonClick = () => {
@@ -180,7 +184,7 @@ function App() {
     setTitle(challenge[rand].titulo)
     setText(challenge[rand].descripcion)
     setBackgroundColor('purple')
-    setBackground('/imgs/nether.jpg')
+    setBackground(nether)
   };
 
   const handleIntroDisplay = () => {
@@ -195,7 +199,7 @@ function App() {
         :<Toggle clickAction={handleIntroDisplay} textContent={'Volver a instrucciones'}></Toggle>
       }
       {intro
-        ? (<div className='game' style={{ backgroundColor, backgroundImage: 'url(/imgs/inn.jpg)', backgroundSize: 'cover' }}>
+        ? (<div className='game' style={{ backgroundColor, backgroundImage: `url(${inn})`, backgroundSize: 'cover' }}>
           <h1>Instrucciones</h1>
           <h3>Insert instructions here</h3>
         </div>)
