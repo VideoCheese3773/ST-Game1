@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import {Counter} from './counter.jsx';
+import { Counter } from './counter.jsx';
 import './App.css'
 import { Toggle } from './Toggle.jsx';
 import inn from './imgs/inn.jpg'
@@ -156,7 +156,7 @@ function App() {
   const [label3, setLabel3] = useState('Jugador 3')
   const [count4, setCount4] = useState(0);
   const [label4, setLabel4] = useState('Jugador 4')
-  
+
 
   useEffect(() => {
     setTitle('Listo para jugar!')
@@ -195,15 +195,33 @@ function App() {
     <>
       {
         intro
-        ?<Toggle clickAction={handleIntroDisplay} textContent={'A Jugar!'}></Toggle>
-        :<Toggle clickAction={handleIntroDisplay} textContent={'Volver a instrucciones'}></Toggle>
+          ? <Toggle clickAction={handleIntroDisplay} textContent={'A Jugar!'}></Toggle>
+          : <Toggle clickAction={handleIntroDisplay} textContent={'Volver a instrucciones'}></Toggle>
       }
       {intro
         ? (<div className='game' style={{ backgroundColor, backgroundImage: `url(${inn})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
           <h1>Instrucciones</h1>
-          <h3>Insert instructions here</h3>
+          <h3 className='rules'>
+            ¡Bienvenidos a esta gran aventura!<br />
+            Esta aventura está diseñada para cuatro jugadores, y cada uno deberá escoger un personaje para iniciar el desafío. En la página del juego, encontrarás un apartado donde cada jugador podrá anotar su nombre y llevar la puntuación durante el transcurso de la partida.<p />
+
+            Para tener éxito, tendrás que ser estratégico. A veces, la mejor opción será aliarte con otro jugador para superar desafíos y enfrentarte a enemigos poderosos. ¡Pero no bajes la guardia, porque solo uno podrá ser el vencedor al final!<p />
+
+            Cómo comenzar la aventura:<br />
+            <ol>
+              <li>Todos los jugadores inician en la casilla marcada como &quot;Start&quot;.</li>
+              <li>A lo largo del tablero, encontrarás diferentes tipos de casillas:</li>
+              <ul>
+                <li>Casillas verdes: Te otorgarán comodines que te darán una ventaja estratégica.</li>
+                <li>Casillas rojas: Estas casillas pueden perjudicarte, ¡así que ten cuidado!</li>
+                <li>Casillas moradas: Son casillas de retos en pareja. Cada jugador deberá hacer equipo con otro. La pareja ganadora obtendrá una estrella, mientras que la pareja perdedora deberá sacar una tarjeta roja, que puede tener consecuencias negativas.</li>
+              </ul>
+              <li>Cada vez que un jugador vuelva a pasar por la casilla &quot;Start&quot;, ganará una estrella adicional.<br />
+              El jugador que logre recolectar primero 8 estrellas será el vencedor de la aventura.</li>
+            </ol>
+          </h3>
         </div>)
-        : (<div className='game' style={{ backgroundColor, backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'center'  }}>
+        : (<div className='game' style={{ backgroundColor, backgroundImage: `url(${background})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
           <h1>{title}</h1>
           <h3 className='textDisplay'>{text}</h3>
           <div className='buttonContainer'>
@@ -212,10 +230,10 @@ function App() {
             <button className='textButton' onClick={handleChallengeButtonClick}><h3>Morado</h3></button>
           </div>
           <div className='counters'>
-            <Counter count={count1} setCount={setCount1} label={label1} setLabel={setLabel1}/>
-            <Counter count={count2} setCount={setCount2} label={label2} setLabel={setLabel2}/>
-            <Counter count={count3} setCount={setCount3} label={label3} setLabel={setLabel3}/>
-            <Counter count={count4} setCount={setCount4} label={label4} setLabel={setLabel4}/>
+            <Counter count={count1} setCount={setCount1} label={label1} setLabel={setLabel1} />
+            <Counter count={count2} setCount={setCount2} label={label2} setLabel={setLabel2} />
+            <Counter count={count3} setCount={setCount3} label={label3} setLabel={setLabel3} />
+            <Counter count={count4} setCount={setCount4} label={label4} setLabel={setLabel4} />
           </div>
         </div>)
       }
