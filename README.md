@@ -2,4 +2,4 @@
 
 Descripción aqui!
 
-Bakcground images by upklyak on Freepik
+Background images by upklyak on Freepik
