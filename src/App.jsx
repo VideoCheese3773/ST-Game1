@@ -10,7 +10,7 @@ import nether from './imgs/nether.jpg'
 const good = [
   {
     titulo: "Avanza Rápido",
-    descripcion: "Avanza 3 casillas y selecciona a otro jugador para que avance 1 casilla."
+    descripcion: "Avanza 3 casillas y elige a otro jugador para que avance 1 casilla."
   },
   {
     titulo: "Intercambio Útil",
@@ -18,15 +18,15 @@ const good = [
   },
   {
     titulo: "Movimiento Estratégico",
-    descripcion: "Avanza hasta la próxima casilla de Ayuda."
+    descripcion: "Avanza hasta la próxima casilla Verde."
   },
   {
     titulo: "Solidaridad Veloz",
-    descripcion: "Avanza 2 casillas y permite que un jugador de tu elección avance 1 casilla."
+    descripcion: "Avanza 2 casillas y elige un jugador para que avance 1 casilla."
   },
   {
     titulo: "Generosidad Compartida",
-    descripcion: "Avanza 1 casilla y selecciona a dos jugadores para que avancen 1 casilla cada uno."
+    descripcion: "Avanza 1 casilla, elige a dos jugadores para que avancen 1 casilla cada uno."
   },
   {
     titulo: "Impulso Colectivo",
@@ -38,11 +38,11 @@ const good = [
   },
   {
     titulo: "Salto Brillante",
-    descripcion: "Avanza hasta la próxima casilla vacía."
+    descripcion: "Avanza hasta la próxima casilla vacía, saltando los jugadores en frente tuyo."
   },
   {
     titulo: "Doble Fuerza",
-    descripcion: "Lanza el dado dos veces y avanza según la suma."
+    descripcion: "Lanza el dado dos veces y avanza la suma."
   },
   {
     titulo: "Suma de Avances",
@@ -60,12 +60,8 @@ const bad = [
     descripcion: "Retrocede 2 casillas y selecciona a otro jugador para que retroceda 1."
   },
   {
-    titulo: "Intercambio Inesperado",
-    descripcion: "Cambia posición con cualquier jugador."
-  },
-  {
     titulo: "Vuelta Obligada",
-    descripcion: "Retrocede hasta la última casilla de Perjudicar."
+    descripcion: "Retrocede hasta la última casilla Roja, o por defecto, el inicio."
   },
   {
     titulo: "Retraso Colectivo",
@@ -77,7 +73,7 @@ const bad = [
   },
   {
     titulo: "Destino Desfavorable",
-    descripcion: "Retrocede hasta la próxima casilla ocupada."
+    descripcion: "Retrocede hasta la próxima casilla ocupada, o por defecto, el inicio."
   },
   {
     titulo: "Retroceso Seguido",
@@ -85,7 +81,7 @@ const bad = [
   },
   {
     titulo: "Cambios de Marea",
-    descripcion: "Cambia posición con el que menos estrellas tienes."
+    descripcion: "Cambia posición con el jugador que menos estrellas tienes."
   },
   {
     titulo: "Desafío Inesperado",
@@ -93,7 +89,7 @@ const bad = [
   },
   {
     titulo: "Revés Implacable",
-    descripcion: "Retrocede 4 casillas pero avanza la mitad en el siguiente turno."
+    descripcion: "Retrocede 4 casillas, avanza la mitad de tu dado redondeando hacia abajo en el siguiente turno."
   },
   {
     titulo: "Dado de 4",
@@ -103,37 +99,29 @@ const bad = [
 
 const challenge = [
   {
-    titulo: "Carrera de Dibujo",
-    descripcion: "Forma un equipo de dos y escoge a tu compañero. Cada equipo tiene 30 segundos para que ambos miembros dibujen un personaje de videojuego. Los otros equipos votan por el mejor dibujo (sin votar por sí mismos). El equipo ganador recibe un reto verde, mientras que los demás obtienen un reto rojo."
+    titulo: "Cadena de palabras",
+    descripcion: "En parejas, una persona dice una palabra, otra persona del otro equipo debe decir otra palabra que esté relacionada con la anterior."
   },
   {
-    titulo: "Batalla Rítmica",
-    descripcion: "Colócate en equipo de dos y escoge a tu compañero. Se pone una canción conocida. Los equipos deben dar palmaditas al ritmo de la música. El último equipo en seguir el ritmo correctamente obtendrá un reto rojo, y el ganador un reto verde."
+    titulo: "Última letra",
+    descripcion: "En parejas, una persona dice una palabra, otra persona del otro equipo debe decir otra palabra que comience por la última letra de la palabra anterior. Las palabras no necesitan estar relacionadas."
   },
   {
-    titulo: "Reto de Velocidad",
-    descripcion: "Selecciona a tu compañero y forma un equipo de dos. Cada equipo escribe tantos nombres de juegos de video como pueda en un minuto. El equipo que tenga más nombres válidos recibe un reto verde, mientras que los demás reciben un reto rojo."
+    titulo: "Acentos",
+    descripcion: "En parejas, el juez dice una palabra, el primer equipo en decir si la palabra es aguda, grave, esdrújula o sobresdrújula gana un punto. el primer grupo en llegar a 3 puntos gana."
   },
   {
-    titulo: "Desafío de Equilibrio",
-    descripcion: "Escoge a tu compañero y forma un equipo de dos. Cada equipo coloca un libro sobre la cabeza de un miembro. El equipo que logre mantenerlo más tiempo sin que caiga recibe un reto verde. Los otros equipos enfrentan un reto rojo."
+    titulo: "Conteo por categoria",
+    descripcion: "En parejas, cada pareja tiene 1 minuto para decir la mayor cantidad de objetos segun su categoria, el equipo que diga la mayor cantidad de objetos gana."
   },
   {
-    titulo: "Reto de Reflejos",
-    descripcion: "Elige a tu compañero para formar un equipo de dos. Cada equipo, excepto uno, pone sus manos en la mesa. Un miembro del equipo restante da una señal y los demás deben reaccionar rápidamente. El equipo que reaccione más lento obtendrá un reto rojo; el más rápido gana un reto verde."
+    titulo: "Manotazo",
+    descripcion: "En parejas, una persona de cada equipo espera la señal de un juez, al recibir la señal deben golpear la carta en la mitad, el primero en tener la carta bajo su mano gana. El primer equipo en llegar a 3 gana."
   },
   {
-    titulo: "Adivinanza de Sinónimos",
-    descripcion: "Forma un equipo de dos escogiendo a tu compañero. Un jugador dice una palabra y el compañero debe decir un sinónimo. El equipo que use más sinónimos correctos recibe un reto verde; los demás, un reto rojo."
+    titulo: "Piedra, Papel, Tijeras",
+    descripcion: "En parejas, uno de cada equipo juega una ronda de piedra, papel o tijera, luego cambian los jugadores, el primer grupo en llegar a 3 gana."
   },
-  {
-    titulo: "Juego de Sinónimos",
-    descripcion: "Colócate en equipo de dos y elige a tu compañero. Un jugador dice una palabra y el compañero debe dar un sinónimo. El primer equipo en fallar enfrenta un reto rojo, y el último en pie gana un reto verde."
-  },
-  {
-    titulo: "Competencia de Emojis",
-    descripcion: "Selecciona a tu compañero y forma un equipo de dos. Cada equipo describe una película famosa usando solo emojis. El primer equipo en adivinar de qué película se trata obtiene un reto verde, y los demás reciben un reto rojo."
-  }
 ]
 
 const generarNumeroAleatorio = (list) => {
