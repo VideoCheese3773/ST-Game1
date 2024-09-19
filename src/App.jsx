@@ -51,6 +51,10 @@ const good = [
   {
     titulo: "Dado de 8",
     descripcion: "El siguiente turno tira un dado de ocho caras."
+  },
+  {
+    titulo: "Roba una estrella",
+    descripcion: "Tu y la persona con más estrellas tiran un dado de 8 caras, quien saque el mayor número se queda con una estrella de la persona con más estrellas"
   }
 ];
 
@@ -81,7 +85,7 @@ const bad = [
   },
   {
     titulo: "Cambios de Marea",
-    descripcion: "Cambia posición con el jugador que menos estrellas tienes."
+    descripcion: "Cambia posición con el jugador que menos estrellas tiene."
   },
   {
     titulo: "Desafío Inesperado",
@@ -94,6 +98,10 @@ const bad = [
   {
     titulo: "Dado de 4",
     descripcion: "El siguiente turno tira un dado de cuatro caras."
+  },
+  {
+    titulo: "Robo de estrella",
+    descripcion: "Todos tiran un dado de 8 caras, el jugador con el número más alto se queda con una de tus estrellas, si no tienes estrellas, usa el botón rojo."
   }
 ];
 
@@ -107,12 +115,8 @@ const challenge = [
     descripcion: "En parejas, una persona dice una palabra, otra persona del otro equipo debe decir otra palabra que comience por la última letra de la palabra anterior. Las palabras no necesitan estar relacionadas."
   },
   {
-    titulo: "Acentos",
-    descripcion: "En parejas, el juez dice una palabra, el primer equipo en decir si la palabra es aguda, grave, esdrújula o sobresdrújula gana un punto. el primer grupo en llegar a 3 puntos gana."
-  },
-  {
     titulo: "Conteo por categoria",
-    descripcion: "En parejas, cada pareja tiene 1 minuto para decir la mayor cantidad de objetos segun su categoria, el equipo que diga la mayor cantidad de objetos gana."
+    descripcion: "En parejas, cada pareja tiene 1 minuto para decir la mayor cantidad de objetos segun su categoria, el equipo que diga la mayor cantidad de objetos gana. Los jugadores pueden escoger la categoría"
   },
   {
     titulo: "Manotazo",
@@ -121,6 +125,18 @@ const challenge = [
   {
     titulo: "Piedra, Papel, Tijeras",
     descripcion: "En parejas, uno de cada equipo juega una ronda de piedra, papel o tijera, luego cambian los jugadores, el primer grupo en llegar a 3 gana."
+  },
+  {
+    titulo: "Pelea de piropos",
+    descripcion: "En parejas, los jugadores escogen un tema y por turnos deben decir un piropo al otro grupo relacionado con el tema, el primer grupo que se quede sin ideas pierde."
+  },
+  {
+    titulo: "Dos verdades, una mentira",
+    descripcion: "En parejas, un jugador de cada pareja debe decir dos verdades y una mentira de ellos mismos, la otra pareja debe identificar la mentira, las parejas se van turnando para dar sus dos verdades y su mentira, el primer grupo en no identificar la mentira pierde pierde."
+  },
+  {
+    titulo: "History Buff!",
+    descripcion: "En parejas, un jugador de cada pareja le pregunta a la otra pareja algo referente a la historia mundial, las preguntas deben ser de conocimiento genreal y no super específicas, cualquier integrante de la otra pareja puede responder, las parejas se van turnando quién pregunta, la primer pareja en fallar una respuesta pierde."
   },
 ]
 
@@ -191,19 +207,21 @@ function App() {
           <h1>Instrucciones</h1>
           <h3 className='rules'>
             ¡Bienvenidos a esta gran aventura!<br />
-            Esta aventura está diseñada para cuatro jugadores, y cada uno deberá escoger un personaje para iniciar el desafío. En la página del juego, encontrarás un apartado donde cada jugador podrá anotar su nombre y llevar la puntuación durante el transcurso de la partida.<p />
+            Esta aventura está diseñada para cuatro jugadores, y cada uno deberá escoger un personaje para iniciar el desafío escogiendo una carta de personaje al azar. En la página del juego, encontrarás un apartado donde cada jugador podrá anotar su nombre y llevar la puntuación durante el transcurso de la partida. El orden de los jugadores es el número de su carta de personaje.<p />
 
             Para tener éxito, tendrás que ser estratégico. A veces, la mejor opción será aliarte con otro jugador para superar desafíos y enfrentarte a enemigos poderosos. ¡Pero no bajes la guardia, porque solo uno podrá ser el vencedor al final!<p />
 
             Cómo comenzar la aventura:<br />
             <ol>
               <li>Todos los jugadores inician en la casilla marcada como &quot;Start&quot;.</li>
+              <li>No pueden haber dos jugadores en una misma casilla, deben tirar un dado de 6 caras, el jugador con el menor número retrocede una casilla</li>
               <li>A lo largo del tablero, encontrarás diferentes tipos de casillas:</li>
               <ul>
                 <li>Casillas verdes: Te otorgarán comodines que te darán una ventaja estratégica.</li>
                 <li>Casillas rojas: Estas casillas pueden perjudicarte, ¡así que ten cuidado!</li>
-                <li>Casillas moradas: Son casillas de retos en pareja. Cada jugador deberá hacer equipo con otro. La pareja ganadora obtendrá una estrella, mientras que la pareja perdedora deberá sacar una tarjeta roja, que puede tener consecuencias negativas.</li>
+                <li>Casillas moradas: Son casillas de retos en pareja. Cada jugador deberá hacer equipo con otro. La pareja ganadora obtendrá una estrella, mientras que la pareja perdedora deberá sacar una tarjeta roja, que puede tener consecuencias negativas. Un representante de cada pareja lanza un dado de 6 lados, la pareja con el número más alto empieza el reto.</li>
               </ul>
+              <li>Si un jugador cae en algún tipo de casilla especial, sea verde, roja o morada, se debe cumplir con lo que diga el resultado en la página web.</li>
               <li>Cada vez que un jugador vuelva a pasar por la casilla &quot;Start&quot;, ganará una estrella adicional.<br />
               El jugador que logre recolectar primero 8 estrellas será el vencedor de la aventura.</li>
             </ol>
