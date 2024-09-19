@@ -1,5 +1,8 @@
 # Ouro Star
 
+### Jupyter
+https://colab.research.google.com/drive/1AKPe6aWdCYm0e0m-WYYwxTK8d58hkAd1?usp=sharing#scrollTo=lhWVZUzShwlY
+
 ¡Bienvenidos a esta gran aventura!
 Esta aventura está diseñada para cuatro jugadores, y cada uno deberá escoger un personaje para iniciar el desafío. En la página del juego, encontrarás un apartado donde cada jugador podrá anotar su nombre y llevar la puntuación durante el transcurso de la partida.
 
