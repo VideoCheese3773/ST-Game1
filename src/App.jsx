@@ -231,9 +231,9 @@ function App() {
           <h1>{title}</h1>
           <h3 className='textDisplay'>{text}</h3>
           <div className='buttonContainer'>
-            <button className='textButton' onClick={handleGoodButtonClick}><h3>Verde</h3></button>
-            <button className='textButton' onClick={handleBadButtonClick}><h3>Rojo</h3></button>
-            <button className='textButton' onClick={handleChallengeButtonClick}><h3>Morado</h3></button>
+            <button className='textButton' onClick={handleGoodButtonClick}><h3>Recompensa</h3></button>
+            <button className='textButton' onClick={handleBadButtonClick}><h3>Castigo</h3></button>
+            <button className='textButton' onClick={handleChallengeButtonClick}><h3>Reto</h3></button>
           </div>
           <div className='counters'>
             <Counter count={count1} setCount={setCount1} label={label1} setLabel={setLabel1} />
